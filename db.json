@@ -45,14 +45,6 @@
   ],
   "customers": [
     {
-      "id": 1,
-      "name": "Alberto",
-      "lastName": "Rojas",
-      "phone": "999326354",
-      "email": "jbrown@att.com",
-      "document": "12773645"
-    },
-    {
       "id": 2,
       "name": "Carolina",
       "lastName": "Canelo",

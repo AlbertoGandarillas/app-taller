@@ -14,22 +14,33 @@ import "./toolbar.scss";
 export function Customers() {
   const [customers, setCustomers] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [apellido, setApellido] = useState([]);
+  const [cliente, setCliente] = useState([ {
+    id : "",
+    name : "",
+    lastName : "",
+    phone : "",
+    email : "",
+    document : "",
+  }]);
 
   /* Insertar cliente en JSON */
   const addCustomer = async (customer) => {
-    try {
-      await fetch("http://localhost:3000/customers", {
-        method: "POST",
-        body: JSON.stringify(customer),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (err) {
-      console.log("err", err);
-      alert("no se pudo registrar intente denuevo");
-    }
+    let method = customer.id ? "UPDATE" : "POST" ;
+    console.log(method);
+    console.log(customer.id);
+    // try {
+       
+    //   await fetch("http://localhost:3000/customers", {
+    //     method: "POST",
+    //     body: JSON.stringify(customer),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //   });
+    // } catch (err) {
+    //   console.log("err", err);
+    //   alert("no se pudo registrar intente denuevo");
+    // }
   };
 
   /* Al llenar el formulario enviar los datos del forulario */
@@ -107,7 +118,7 @@ export function Customers() {
     console.log(phone);
     console.log(email);
     console.log(document);
-    setApellido(lastName);
+    setCliente(customer);
     setIsModalVisible(true);
     //await deleteCustomer(customer);
     // const response = await getCustomers();
@@ -240,7 +251,6 @@ export function Customers() {
        dataIndex: "operation",
        render: (_, record) => (
          <Popconfirm
-           title="Sure to delete?"
            title={"Estas seguro que deseas remover este cliente?"}
            onConfirm={() => {
              handleDelete(record);
@@ -330,12 +340,11 @@ export function Customers() {
               },
             ]}
           >
-            <Input />
+            <Input value={cliente.name} defaultValue={cliente.name} />
           </Form.Item>
           <Form.Item
             label="Apellidos"
             name="lastName"
-            value={apellido}
             rules={[
               {
                 required: true,
@@ -343,7 +352,7 @@ export function Customers() {
               },
             ]}
           >
-            <Input />
+            <Input value={cliente.lastName} defaultValue={cliente.lastName} />
           </Form.Item>
           <Form.Item
             name="phone"
@@ -355,7 +364,7 @@ export function Customers() {
               },
             ]}
           >
-            <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
+            <Input addonBefore={prefixSelector} style={{ width: "100%" }} value={cliente.phone} defaultValue={cliente.phone} />
           </Form.Item>
           <Form.Item
             name="email"
@@ -371,7 +380,7 @@ export function Customers() {
               },
             ]}
           >
-            <Input />
+            <Input value={cliente.email} defaultValue={cliente.email} />
           </Form.Item>
           <Form.Item label="Tipo Documento">
             <Select>
@@ -381,7 +390,7 @@ export function Customers() {
           </Form.Item>
           <Form.Item label="Nro. Documento">
             <Form.Item name="document" noStyle>
-              <InputNumber min={1} max={10} />
+              <InputNumber min={1} max={10} value={cliente.document} defaultValue={cliente.document} />
             </Form.Item>
           </Form.Item>
           <Form.Item
