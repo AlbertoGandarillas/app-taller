@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "sebastian",
+      "lastname": "yabiku"
+    },
+    {
+      "id": 2,
+      "name": "melisa",
+      "lastname": "yabiku"
+    },
+    {
+      "id": 3,
+      "name": "jose",
+      "lastname": "yabiku"
+    },
+    {
+      "id": 4,
+      "name": "cristina",
+      "lastname": "yabiku"
+    }
+  ],
+  "usersRegister": [
+    {
+      "id": 1,
+      "user": "admin",
+      "password": "123456",
+      "profile": {
+        "name": "Sebastian",
+        "edad": 32,
+        "sex": "m"
+      }
+    },
+    {
+      "id": 2,
+      "user": "admin2",
+      "password": "123456",
+      "profile": {
+        "name": "Jose",
+        "edad": 32,
+        "sex": "m"
+      }
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Alberto",
+      "lastName": "Rojas",
+      "phone": "999326354",
+      "email": "jbrown@att.com",
+      "document": "12773645"
+    },
+    {
+      "id": 2,
+      "name": "Carolina",
+      "lastName": "Canelo",
+      "phone": "999235443",
+      "email": "carolina@att.com",
+      "document": "23875429"
+    },
+    {
+      "id": 3,
+      "name": "Henry",
+      "lastName": "Puerta",
+      "phone": "999237755",
+      "email": "henry@att.com",
+      "document": "20333476"
+    },
+    {
+      "id": 4,
+      "name": "Brunella",
+      "lastName": "Canelo",
+      "phone": "993245365",
+      "email": "brune@att.com",
+      "document": "25431172"
+    }
+  ]
+}
